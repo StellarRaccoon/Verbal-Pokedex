@@ -1,13 +1,25 @@
 """
-based on the game tutorial found here: https://realpython.com/python-speech-recognition/
+A verbal pokedex that responds with the dex number of a pokemon
+you ask the dex verbally and it will respond verbally
+I may add some additional functionalities and UI, but this is just simple and quick responses
+
+dexDict.txt just contains all the pokemon and their National Dex numbers
+
+Much of the speech recognition comes from the speech recognition game tutorial 
+"The Ultimate Guide To Speech Recognition With Python" by David Amos 
+found here: https://realpython.com/python-speech-recognition/
+
+Caden Joergens
 """
 import time
-import json
 import speech_recognition as sr
 import pyttsx3
 
 def recognize_speech_from_mic(recognizer, microphone):
-    """Transcribe speech from recorded from `microphone`.
+    """
+    Written by Dan Amos
+    https://realpython.com/python-speech-recognition/
+    Transcribe speech from recorded from `microphone`.
 
     Returns a dictionary with three keys:
     "success": a boolean indicating whether or not the API request was
@@ -135,5 +147,3 @@ if __name__ == "__main__":
                     engine.say("{} produced an error".format(name_to_test))
                     engine.runAndWait()
                     i=i+1
-        
-        
